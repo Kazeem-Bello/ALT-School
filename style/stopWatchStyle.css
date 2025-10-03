@@ -136,7 +136,7 @@ body{
   box-shadow: 0 0 0 3px var(--ring);
 } */
 
-/* .laps{
+.laps{
   list-style: decimal-leading-zero inside;
   margin: 8px 0 0;
   padding: 0;
@@ -144,7 +144,7 @@ body{
   max-height: 220px;
   overflow: auto;
   border-top: 1px dashed rgba(128,128,128,.25);
-} */
+}
 
 .laps li{
   display: flex;
