@@ -1,10 +1,3 @@
-/* ---------------------------------------------------
-   Stopwatch: Hours:Minutes:Seconds.Milliseconds
-   - Uses setInterval (10ms tick) per assignment.
-   - Prevents multiple intervals.
-   - Start, Stop, Reset; plus Lap & Theme toggle (bonus).
----------------------------------------------------- */
-
 const $ = (sel) => document.querySelector(sel);
 
 // Display elements
@@ -33,6 +26,10 @@ let running = false;
 const pad2 = (n) => String(n).padStart(2, "0");
 const pad3 = (n) => String(n).padStart(3, "0");
 
+// function pad1 (n){
+//   return String(n).padStart(2, "0");
+// }
+
 // Render HH:MM:SS.mmm
 function render(ms){
   const hours = Math.floor(ms / 3_600_000);
@@ -40,7 +37,7 @@ function render(ms){
   const seconds = Math.floor((ms % 60_000) / 1000);
   const millis  = ms % 1000;
 
-  hEl.textContent  = pad2(hours);
+ hEl.textContent  = pad2(hours);
   mEl.textContent  = pad2(minutes);
   sEl.textContent  = pad2(seconds);
   msEl.textContent = "." + pad3(millis);
@@ -58,7 +55,7 @@ function start(){
   lapBtn.disabled   = false;
 }
 
-// Stop (pause)
+// Stop (pause)                                
 function stop(){
   if (!running) return;
   running = false;
@@ -67,7 +64,6 @@ function stop(){
   accumulated += Date.now() - startTimestamp;
   startBtn.disabled = false;
   stopBtn.disabled  = true;
-  // resetBtn, lap remain enabled
 }
 
 // Reset
@@ -124,4 +120,4 @@ lapBtn  .addEventListener("click", lap);
 themeBtn.addEventListener("click", toggleTheme);
 
 // Initial render
-render(0);
+// render(0);
