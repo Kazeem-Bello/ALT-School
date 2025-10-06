@@ -87,7 +87,7 @@ function tick(){
   render(elapsed);
 }
 
-// Lap (bonus)
+// Lap 
 function lap(){
   const displayTime = `${hEl.textContent}:${mEl.textContent}:${sEl.textContent}${msEl.textContent}`;
   const li = document.createElement("li");
@@ -96,7 +96,7 @@ function lap(){
   lapsEl.prepend(li);
 }
 
-// Theme toggle (bonus)
+// Theme toggle
 function toggleTheme(){
   const app = document.querySelector(".app");
   const isLight = app.getAttribute("data-theme") === "light";
@@ -104,7 +104,7 @@ function toggleTheme(){
   themeBtn.setAttribute("aria-pressed", String(!isLight));
 }
 
-// Keyboard shortcuts (nice-to-have)
+// Keyboard shortcuts 
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space"){ e.preventDefault(); running ? stop() : start(); }
   if (e.key.toLowerCase() === "r") reset();
@@ -120,4 +120,4 @@ lapBtn  .addEventListener("click", lap);
 themeBtn.addEventListener("click", toggleTheme);
 
 // Initial render
-// render(0);
+render(0); 

@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stopwatch</title>
-  <link rel="stylesheet" href="./style/stopWatchStyle.css" />
-</head>
-<body>
-  <main class="app" data-theme="light">
-    <section class="stopwatch">
-      <h1 class="title">Stopwatch</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="./style/stopWatchStyle.css" />
+  </head>
+  <body>
+    <main class="app" data-theme="light">
+      <section class="stopwatch">
+        <h1 class="title">Stopwatch</h1>
 
-      <!-- Timer Display -->
-      <div class="display" aria-live="polite" aria-atomic="true">
-        <span id="hours">00</span><span class="sep">:</span>
-        <span id="minutes">00</span><span class="sep">:</span>
-        <span id="seconds">00</span>
-        <span id="ms" class="ms">.000</span>
-      </div>
+        <!-- Timer Display -->
+        <div class="display" aria-live="polite" aria-atomic="true">
+          <span id="hours">00</span><span class="sep">:</span>
+          <span id="minutes">00</span><span class="sep">:</span>
+          <span id="seconds">00</span>
+          <span id="ms" class="ms">.000</span>
+        </div>
 
-      <!-- Controls -->
-      <div class="controls">
-        <button id="startBtn" class="btn primary" type="button">Start</button> 
-        <button id="stopBtn" class="btn warn" type="button" >Stop</button>
-        <button id="resetBtn" class="btn" type="button">Reset</button>
-        <button id="lapBtn" class="btn" type="button">Lap</button>
-        <button id="themeBtn" class="btn ghost" type="button" aria-pressed="false" title="Toggle theme">Toggle theme</button>
-      </div>
+        <!-- Controls -->
+        <div class="controls">
+          <button id="startBtn" class="btn primary" type="button">Start</button>
+          <button id="stopBtn" class="btn warn" type="button">Stop</button>
+          <button id="resetBtn" class="btn" type="button">Reset</button>
+          <button id="lapBtn" class="btn" type="button">Lap</button>
+          <button
+            id="themeBtn"
+            class="btn ghost"
+            type="button"
+            aria-pressed="false"
+            title="Toggle theme"
+          >
+            Toggle theme
+          </button>
+        </div>
 
         <!-- Laps -->
-      <ol id="laps" class="laps" aria-label="Lap times"></ol>
-    </section>
+        <ol id="laps" aria-label="Lap times"></ol>
+      </section>
 
-    <footer class="tips">
-      <p>
-        Tips: <kbd>Space:</kbd> for Start/Stop ** <kbd>R:</kbd> for Reset ** <kbd>L:</kbd> for Lap ** <kbd>T:</kbd> for  Theme
-      </p>
-    </footer>
-  </main>
+      <footer class="tips">
+        <p>
+          Use Keyboard: <kbd>Space:</kbd> for Start/Stop ** <kbd>R:</kbd> for
+          Reset ** <kbd>L:</kbd> for Lap ** <kbd>T:</kbd> for Theme
+        </p>
+      </footer>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
