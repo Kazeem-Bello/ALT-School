@@ -7,7 +7,9 @@ class CourseService:
 
     @staticmethod
     def create_course(course: CourseCreate):
-        course_id = len(course_db) + 1
+        if any(course.code == existing_course.code for existing_course in course_db.values()):
+            raise HTTPException(detail = "course code already exist", status_code = status.HTTP_409_CONFLICT)
+        course_id = max(course_db.keys(), default = 0) + 1
         course_info = Course(
             id = course_id,
             title = course.title,
