@@ -27,7 +27,10 @@ class CourseService:
     
     @staticmethod
     def get_course_id(course_id: int):
-        return course_db.get(course_id)
+        course = course_db.get(course_id)
+        if not course:
+            raise HTTPException(detail = "course not found", status_code = status.HTTP_404_NOT_FOUND)
+        return course
 
     @staticmethod
     def update_course(course_id: int, course_info: CourseUpdate):
