@@ -18,12 +18,12 @@ async def retrieve_all_enrollments(user = Depends(is_admin)):
     return EnrollmentService.retrieve_all_enrollments()
 
 
-@enrollment_router.get("/{user_id}", status_code = status.HTTP_200_OK)
+@enrollment_router.get("/user/{user_id}", status_code = status.HTTP_200_OK)
 async def retrieve_user_enrollments(user_id: int):
     return EnrollmentService.retrieve_user_enrollments(user_id)
 
 
-@enrollment_router.get("/{course_id}", status_code = status.HTTP_200_OK)
+@enrollment_router.get("/course/{course_id}", status_code = status.HTTP_200_OK)
 async def retrieve_course_enrollments(course_id: int, user = Depends(is_admin)):
     return EnrollmentService.retrieve_course_enrollments(course_id)
 

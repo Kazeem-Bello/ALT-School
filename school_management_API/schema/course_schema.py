@@ -4,7 +4,7 @@ from typing import Optional
 
 class CourseBase(BaseModel):
     title: str = Field((...), min_length = 1)
-    code: int = Field((...), min_length = 1)
+    code: int
 
 class CourseCreate(CourseBase):
     pass

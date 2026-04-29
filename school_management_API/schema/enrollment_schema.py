@@ -3,8 +3,8 @@ from typing import Literal
 
 
 class EnrollmentBase(BaseModel):
-    user_id: str
-    course_id: str
+    user_id: int
+    course_id: int
 
 class EnrollmentCreate(EnrollmentBase):
     pass

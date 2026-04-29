@@ -18,7 +18,7 @@ async def get_courses():
   
 
 @course_router.get("/{course_id}", status_code = status.HTTP_200_OK)
-async def get_course_id(course_id: int):
+async def get_course_by_id(course_id: int):
     return CourseService.get_course_id(course_id)
    
 
